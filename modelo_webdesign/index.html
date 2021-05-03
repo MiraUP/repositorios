@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>MAM - Mecânica Automotiva para Mulheres</title>
+      <!-- Bootstrap CSS -->
+      <link href="assets/css/style.min.css" rel="stylesheet">
+  </head>
+  <body>
+      <div class="container">
+        
+        <div class="row">
+          <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              
+              <span class="navbar-brand mb-0 h1">Documentação complementar Webdesign MiraUP</span>
+              
+              <button class="btn btn-primary float-end bi bi-list btn-lg wave-effect wave-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"></button>
+
+            </div>
+          </nav>
+          <hr />
+        </div>
+
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#efeito-wave">Efeito Wave</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#imagem-hover">Imagem Hover</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row umitem">
+            <aside class="col-md-4 align-middle">
+              <strong>JS -</strong> Waves.attach('.button'); <br />
+              <strong>CLASS -</strong> wave-effect + wave-light ou wave-dark
+            </aside>
+            <section id="efeito-wave" class="col-md-8">
+              <h2>Efeito Wave</h2>
+              <button type="button" class="btn lg btn-primary-2 wave-effect wave-light btn-lg">Primary</button>
+              <a class="btn btn-warning wave-effect wave-dark bi bi-arrow-repeat btn-lg">Link</a>
+            </section>
+          </div>
+
+          <div class="row umitem">
+            <aside class="col-md-4 align-middle">
+              <strong>Propriedade obrigatória -</strong> .img-hover<br />
+              <strong>Efeito da imagem -</strong> .img-zoom-low<br />
+              <strong>Efeito da mascara -</strong> .overlay-top-bottom<br />
+              <strong>Elementos parentais -</strong> .child-zoom-out
+            </aside>
+            <section id="imagem-hover" class="col-md-8">
+              <h2>Imagem Hover</h2>
+            
+              <div class="row">
+
+                <div class="col-md-3">
+                  <a class="img-hover img-zoom-low overlay-top-bottom child-zoom-out">
+                    <img class="img-fluid" src="https://via.placeholder.com/300" alt="Placeholder">
+                    <span class="child">
+                      <i class="bi bi-arrow-right-circle align-middle"></i>
+                      <i class="bi bi-arrow-right-circle align-middle"></i>
+                    </span>
+                  </a>
+                  <p class="text-center small">
+                    .img-hover<br />
+                    .img-zoom-low<br />
+                    .overlay-top-bottom<br />
+                    .child-zoom-out
+                  </p>
+                </div>
+                
+                <div class="col-md-3">
+                  <a class="img-hover img-zoom-speed overlay-left-right child-zoom-in">
+                    <img class="img-fluid" src="https://via.placeholder.com/300" alt="Placeholder">
+                    <span class="child">
+                      <i class="bi bi-arrow-right-circle align-middle"></i>
+                    </span>
+                  </a>
+                  <p class="text-center small">
+                    .img-hover<br />
+                    .img-zoom-speed<br />
+                    .overlay-left-right<br />
+                    .child-zoom-in
+                  </p>
+                </div>
+
+                <div class="col-md-3">
+                  <a class="img-hover img-dropdown overlay-inclined slider">
+                    <img class="img-fluid" src="https://via.placeholder.com/300" alt="Placeholder">
+                  </a>
+                  <p class="text-center small">
+                    .img-hover<br />
+                    .img-zoom-low<br />
+                    .overlay-top-bottom<br />
+                    .child-zoom-out
+                  </p>
+                </div>
+
+                <div class="col-md-3">
+                  <a class="img-hover img-dropdown overlay-circule slider">
+                    <img class="img-fluid" src="https://via.placeholder.com/300" alt="Placeholder">
+                  </a>
+                  <p class="text-center small">
+                    .img-hover<br />
+                    .img-zoom-low<br />
+                    .overlay-top-bottom<br />
+                    .zoom-out
+                  </p>
+                </div>
+
+              </div>
+            </section>
+          </div>
+      </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  <script src="assets/js/wave.js"></script>
+  <script src="assets/js/init.js"></script>
+</html>
