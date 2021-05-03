@@ -1,0 +1,83 @@
+@import "setup";
+
+/** Import Bootstrap */
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+html, body {
+    margin:0;
+    padding: 0;
+}
+
+.navbar {
+    position: absolute;
+    z-index: 10;
+    padding: 40px;
+    width: 100%;
+    align-items: flex-start;
+
+    .logo-mam {
+        width: 100px;
+    }
+
+    .menu {
+        width: 75px;
+        height: 75px;
+        background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Camada_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 56.85 18.93' style='enable-background:new 0 0 56.85 18.93;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;stroke:%2300002c;stroke-width:5;stroke-linecap:round;%7D%0A%3C/style%3E%3Cg id='Grupo_2' transform='translate(-1084 -47)'%3E%3Cline id='Linha_1' class='st0' x1='1138.35' y1='49.5' x2='1103.78' y2='49.5'/%3E%3Cline id='Linha_2' class='st0' x1='1138.35' y1='63.43' x2='1086.5' y2='63.43'/%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 40px;
+        @include property-anima-200;
+
+        &:focus {
+            box-shadow: none;
+        } 
+
+        &:hover {
+            background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Camada_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 56.85 18.93' style='enable-background:new 0 0 56.85 18.93;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;stroke:%23404061;stroke-width:5;stroke-linecap:round;%7D%0A%3C/style%3E%3Cg id='Grupo_2' transform='translate(-1084 -47)'%3E%3Cline id='Linha_1' class='st0' x1='1138.35' y1='49.5' x2='1103.78' y2='49.5'/%3E%3Cline id='Linha_2' class='st0' x1='1138.35' y1='63.43' x2='1086.5' y2='63.43'/%3E%3C/g%3E%3C/svg%3E");
+            @include property-anima-200;
+        }
+
+        &:active {
+            background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' id='Camada_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 56.85 18.93' style='enable-background:new 0 0 56.85 18.93;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;stroke:%237f7f94;stroke-width:5;stroke-linecap:round;%7D%0A%3C/style%3E%3Cg id='Grupo_2' transform='translate(-1084 -47)'%3E%3Cline id='Linha_1' class='st0' x1='1138.35' y1='49.5' x2='1103.78' y2='49.5'/%3E%3Cline id='Linha_2' class='st0' x1='1138.35' y1='63.43' x2='1086.5' y2='63.43'/%3E%3C/g%3E%3C/svg%3E");
+            @include property-anima-200;
+        }
+    }
+}
+
+#carousel-top {
+    background: $white-mam-1;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background: url('../img/grafismo-carousel-top.svg') center top;
+        background-repeat: no-repeat;
+        mix-blend-mode: multiply;
+        z-index: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100px;
+        width: 100%;
+        bottom: -100px;
+        background: linear-gradient(to bottom,  rgba(236,240,241,1) 0%,rgba(236,240,241,0) 100%);
+    }
+
+    .carousel-item {
+        
+        img {
+            max-height: 768px;
+            width: auto !important;
+        }
+
+        .carousel-caption {
+            z-index: 2;
+        }
+    }
+}

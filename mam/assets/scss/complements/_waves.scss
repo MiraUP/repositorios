@@ -1,0 +1,47 @@
+@import "../configure/colors";
+
+.wave-effect {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        top:calc(50% + -125px);
+        left:calc(50% + -125px);
+        border-radius: 50px;
+        transition: all 1s;
+        opacity: .3;
+    }
+
+    &:active {
+        &::after {
+            background-size: 100%;
+            width: 0px;
+            height: 0px;
+            top:50%;
+            left:50%;
+            transition: all 0s;
+            transform: scale(1);
+            background-color: $white-mam-1;
+        }
+    }
+
+    &.wave-light {
+        &:active {
+            &::after {
+                background-color: $white-mam-1;
+            }
+        }
+    }
+
+    &.wave-dark {
+        &:active {
+            &::after {
+                background-color: $black-mam-1;
+            }
+        }
+    }
+}

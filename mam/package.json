@@ -1,0 +1,17 @@
+{
+  "name": "mam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass --watch assets/scss/style.scss assets/css/style.css",
+    "sass-min": "node-sass --watch assets/scss/style.scss assets/css/style.min.css --output-style compressed"
+  },
+  "keywords": [],
+  "author": "Alexandre Brito",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3",
+    "bootstrap-icons": "^1.4.1"
+  }
+}

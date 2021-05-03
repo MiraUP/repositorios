@@ -1,0 +1,261 @@
+@import "../configure/colors";
+@import "../configure/animation";
+
+@mixin property-pseudo {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    opacity: .2;
+    transition: all 300ms cubic-bezier(0.800, 0.000, 0.200, 1.000);
+    transition-timing-function: cubic-bezier(0.800, 0.000, 0.200, 1.000);
+}
+  
+.img-hover {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+  
+    .child {
+        position: absolute;
+        font-size: 2rem;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+
+        //Text
+        .text {
+            display: block;
+
+            h1, h2, h3, h4, h5, p {
+                color: $light;
+                display: block;
+            }
+            p {
+                font-size: 1rem;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+  
+    //Efeito da imagem
+    &.img-zoom-low, &.img-zoom-speed {
+        img {
+            transform: scale(1) rotate(-0deg);
+            @include property-anima;
+        }
+    }
+    &.img-dropdown {
+        img {
+            transform: scale(1.5) translateY(0px);
+            @include property-anima;
+        }
+    }
+    &.img-zoom-in {
+        img {
+            transform: scale(1);
+            @include property-anima;
+        }
+    }
+   
+    //Efeito dos Elementos
+    &.child-zoom-out, &.child-zoom-in, &.child-slider {
+        .child {
+            transform: scale(10);      
+            opacity: 0;
+            @include property-anima;
+        } 
+    }
+  
+    &.child-zoom-in {
+        .child {
+            transform: scale(0);      
+        } 
+    }
+
+    &.child-slider {
+        .child {
+            transform: translateX(-100%);
+            @include property-anima-500;
+        }
+    }
+
+    &.child-fade {
+        .child {
+            opacity: 0;
+            @include property-anima;
+        }
+    }
+  
+    //Efeito do Overlay
+    &.overlay-top-bottom {    
+        &::before {
+            top:0;
+            bottom: 100%;
+        }
+        &::after {
+            top:100%;
+            bottom: 0;
+        }
+        &::before, &::after {
+            width: 100%;
+            left: 0;
+        }
+    }
+  
+    &.overlay-left-right {
+        &::before {
+            left:0;
+            right: 100%;
+        }
+        &::after {
+            left:100%;
+            right: 0;
+        }
+        &::before, &::after {
+            top:0;
+            bottom: 0;
+        }
+    }
+
+    &.overlay-inclined {
+        &::before {
+            opacity: .5;
+            transform: translateX(-125%) skewX(-40deg);
+            top: 0;
+            bottom: 0;
+            width: 200%;
+        }
+    }
+
+    &.overlay-circule {
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 1000px;
+            transform: scale(0) translateX(0)  translateY(0);
+            opacity: 0;
+            @include property-anima-500;
+        }
+    }
+  
+  
+    &:hover {
+        
+        //Efeito da imagem
+        &.img-zoom-low {
+            img {
+                transform: scale(1.5) rotate(-10deg);
+                @include property-anima-low;
+            }
+        }
+    
+        &.img-zoom-speed {
+            img {
+                transform: scale(1.5) rotate(10deg);
+            }
+        }
+        &.img-dropdown {
+            img {
+                transform: scale(1.5) translateY(10px);
+            }
+        }
+        &.img-zoom-in {
+            img {
+                transform: scale(.8);
+            }
+        }
+        &.img-zoom-speed, &.img-dropdown, &.img-zoom-in {
+            img {
+                @include property-anima;
+            }
+        }
+    
+        //Efeito dos Elementos
+        &.child-zoom-out, &.child-zoom-in, &.child-slider {
+            .child {
+                transform: scale(1);
+                opacity: 1;
+                @include property-anima;
+            }
+        }
+
+        &.child-slider {
+            .child {
+                transform: translateX(0);
+            }
+        }
+
+        &.child-fade {
+            .child {
+                opacity: 1;
+            }
+        }
+    
+        //Efeito do Overlay
+        &::before, &::after {
+            @include property-anima;
+        }
+    
+        &.overlay-top-bottom {  
+            &::before {
+                bottom: 0;
+            }
+            &::after {
+                top:0;
+            }
+        }
+    
+        &.overlay-left-right {  
+            &::before {
+                right: 0;
+            }
+            &::after {
+                left:0;
+            }
+        }
+
+        &.overlay-inclined {
+            &::before {
+                transform: translateX(-25%) skewX(-40deg);
+            }
+        }
+
+        &.overlay-circule {
+            &::before {
+                transform:scale(2) translateX(0)  translateY(0);
+                opacity: .7;
+                @include property-anima-500;
+            }
+        }
+    }
+  
+    &::before, &::after {
+        background: $dark;
+        @include property-pseudo;
+        @include property-anima;
+    }
+  
+    &.effect-dark {
+        &::before, &::after {
+            background: $dark;
+        }
+    }
+  
+    &.effect-light {
+        &::before, &::after {
+            background: $light;
+        }
+    }
+}
